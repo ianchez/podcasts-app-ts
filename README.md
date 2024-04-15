@@ -1,7 +1,13 @@
-# podcasts-app-ts
-React / Typescript SPA - Showing the latest popular podcasts
+# React App / Typescript - Boilerplate
+React / Typescript
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Installation
+1. Clone the repository
+2. You need Node.js installed. I recommend using NVM [github repository](https://github.com/nvm-sh/nvm)
+3. Make sure you have yarn configured. If not, check the [yarn getting-started guide](https://yarnpkg.com/getting-started)
+4. Run `yarn install` to install the dependencies
 
 ## Available Scripts
 
