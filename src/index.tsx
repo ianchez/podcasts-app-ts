@@ -1,42 +1,46 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import reportWebVitals from './reportWebVitals';
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import './index.css'
+import reportWebVitals from './reportWebVitals'
 
 import {
   createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+  RouterProvider
+} from 'react-router-dom'
 
 // screens
-import NotFoundScreen from './screens/NotFoundScreen';
-import HomeScreen from './screens/HomeScreen';
+import NotFoundScreen from './screens/NotFoundScreen'
+import HomeScreen from './screens/HomeScreen'
 
 // TODO: Move this to a separate file
 const routes = [
   {
     path: '/',
-    element: <HomeScreen />,
+    element: <HomeScreen />
   },
   {
     path: '*',
-    element: <NotFoundScreen />,
-  },
-];
+    element: <NotFoundScreen />
+  }
+]
 
-const router = createBrowserRouter(routes);
+const router = createBrowserRouter(routes)
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
+const rootElement = document.getElementById('root')
+
+if (rootElement === null) {
+  throw new Error('Could not find root element')
+}
+
+const root = ReactDOM.createRoot(rootElement)
 
 root.render(
   <React.StrictMode>
     <RouterProvider router={router} />
   </React.StrictMode>
-);
+)
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+reportWebVitals()
