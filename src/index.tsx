@@ -1,8 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import HomeScreen from './screens/HomeScreen';
 import reportWebVitals from './reportWebVitals';
+
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+
+// screens
+import NotFoundScreen from './screens/NotFoundScreen';
+import HomeScreen from './screens/HomeScreen';
+
+// TODO: Move this to a separate file
+const routes = [
+  {
+    path: '/',
+    element: <HomeScreen />,
+  },
+  {
+    path: '*',
+    element: <NotFoundScreen />,
+  },
+];
+
+const router = createBrowserRouter(routes);
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -10,7 +32,7 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    <HomeScreen />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 
